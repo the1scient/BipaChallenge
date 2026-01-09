@@ -7,10 +7,61 @@
 import SwiftUI
 
 struct ListView : View {
+    
+    let nodes : [Node] = [Node(
+        id: "03864ef025fde8fb587d989186ce6a4a186895ee44a926bfc370e2c366597a3f8f",
+        alias: "ACINQ",
+        channels: 1923,
+        capacity: 37101048354,
+        firstSeen: 1522941222,
+        updatedAt: 1767917849,
+        city: nil,
+        country: nil
+    ),
+  Node(
+      id: "03864ef025fde8fb587d989186ce6a4a186895ee44a926bfc370e2c366597a3f8f",
+      alias: "ACINQ",
+      channels: 1923,
+      capacity: 37101048354,
+      firstSeen: 1522941222,
+      updatedAt: 1767917849,
+      city: nil,
+      country: nil
+  )
+    
+    ]
+    
     var body : some View {
         
-        Text("List View")
+            
+        
+    
+        // TODO: List sorting picker
+        
+        List {
+            ForEach(nodes) { node in
+                
+                VStack(alignment: .leading) {
+                    Text(node.alias)
+                        .font(.title)
+                    
+                    Text("Capacidade: \(node.capacity)")
+                    
+                    
+                    
+                }
+                
+                
+                
+                
+            }
+        }
+
+        
+        
+        
     }
+    
 }
 
 #Preview() {

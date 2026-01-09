@@ -15,5 +15,5 @@ struct MapView : View {
 }
 
 #Preview() {
-    ListView()
+    MapView()
 }

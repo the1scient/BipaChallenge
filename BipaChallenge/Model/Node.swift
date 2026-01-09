@@ -5,9 +5,9 @@
 //  Created by Guilherme Fabbri on 08/01/26.
 //
 
-struct Node {
+struct Node : Identifiable {
         
-    let publicKey: String
+    let id: String
     let alias: String
     let channels: Int
     let capacity: Int
