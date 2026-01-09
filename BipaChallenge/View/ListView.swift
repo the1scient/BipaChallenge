@@ -33,9 +33,6 @@ struct ListView : View {
     
     var body : some View {
         
-            
-        
-    
         // TODO: List sorting picker
         
         List {
