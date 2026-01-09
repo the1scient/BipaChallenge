@@ -12,29 +12,41 @@ struct ListView : View {
 
     var body : some View {
         
-        // TODO: List sorting picker
-        
-        List {
-            ForEach(vm.nodes) { node in
-                
-                ListItemComponent(node: node)
-                
-                
-                
+        ZStack {
+            // TODO: List sorting picker
+            
+            
+            if vm.isLoading {
+                ProgressView("Buscando dados da API...")
+            }
+            else if let error = vm.errorMsg {
+                Text("Erro ao buscar dados da API: \(error)")
+            }
+            else {
+                List {
+                    ForEach(vm.nodes) { node in
+                        
+                        ListItemComponent(node: node)
+                        
+                        
+                        
+                        
+                    }
+                }
                 
             }
+            
+            
+            
         }
         .task {
             vm.fetchNodes()
         }
-        
-        
-        
-        
     }
        
     
 }
+    
 
 #Preview() {
     ListView()
