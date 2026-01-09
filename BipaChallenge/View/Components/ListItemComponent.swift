@@ -14,14 +14,28 @@ struct ListItemComponent : View {
     var body : some View {
         NavigationLink(destination: ListDetailsView(node: node)) {
             VStack(alignment: .leading) {
+                
                 Text(node.alias)
                     .font(.title)
                 
                 Text("Capacidade: \(node.capacity)")
                 
-                Text("\(node.firstSeen)")
+                Text("Capacidade: \(node.capacity / 100000000) BTC")
+                
+                Text("Canais: \(node.channels)")
+                
+                
+                Spacer()
+                   
+                
+                
+                Text("Atualizado em: \(node.updatedAt, format: .dateTime.day().month().year())")
+                    .environment(\.locale, Locale(identifier: "pt-BR"))
+                
+                Text("Público em: \(node.firstSeen, format: .dateTime.day().month().year())")
                     .environment(\.locale, Locale(identifier: "pt-BR"))
                     
+                
                 
             }
         }
