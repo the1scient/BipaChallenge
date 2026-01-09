@@ -33,5 +33,5 @@ struct MainTabView : View {
 }
 
 #Preview() {
-    ListView()
+    MainTabView()
 }
