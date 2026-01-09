@@ -7,14 +7,17 @@
 
 struct Node : Identifiable, Decodable {
         
-    let id: String
+    let publicKey: String
     let alias: String
     let channels: Int
     let capacity: Int
     let firstSeen: Int
     let updatedAt: Int
-    let city: String?
-    let country: String?
+    let city: [String:String]?
+    let country: [String:String]?
     
+    var id : String {
+        publicKey
+    }
     
 }

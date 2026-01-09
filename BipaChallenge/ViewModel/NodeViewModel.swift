@@ -46,9 +46,10 @@ final class NodeViewModel : ObservableObject {
             }
             
             
+            
         }
         
-        
+        task.resume()
         
     }
     

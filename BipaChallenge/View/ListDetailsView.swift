@@ -21,7 +21,7 @@ struct ListDetailsView : View {
 
 #Preview {
     ListDetailsView(node: Node(
-        id: "03864ef025fde8fb587d989186ce6a4a186895ee44a926bfc370e2c366597a3f8f",
+        publicKey: "03864ef025fde8fb587d989186ce6a4a186895ee44a926bfc370e2c366597a3f8f",
         alias: "ACINQ",
         channels: 1923,
         capacity: 37101048354,
