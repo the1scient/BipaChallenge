@@ -1,5 +1,5 @@
 //
-//  ListItemComponent.swift
+//  ListDetailView.swift
 //  BipaChallenge
 //
 //  Created by Guilherme Fabbri on 08/01/26.
@@ -7,28 +7,20 @@
 
 import SwiftUI
 
-struct ListItemComponent : View {
-    
+struct ListDetailsView : View {
     let node : Node
-    
+
     var body : some View {
-        NavigationLink(destination: ListDetailsView(node: node)) {
-            VStack(alignment: .leading) {
-                Text(node.alias)
-                    .font(.title)
-                
-                Text("Capacidade: \(node.capacity)")
-                
-            }
+        VStack {
+            Text("\(node.alias)")
         }
-       
        
     }
     
 }
 
 #Preview {
-    ListItemComponent(node: Node(
+    ListDetailsView(node: Node(
         id: "03864ef025fde8fb587d989186ce6a4a186895ee44a926bfc370e2c366597a3f8f",
         alias: "ACINQ",
         channels: 1923,
