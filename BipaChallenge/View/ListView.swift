@@ -8,6 +8,8 @@ import SwiftUI
 
 struct ListView : View {
     
+    @StateObject var vm = NodeViewModel()
+    
     let nodes : [Node] = [Node(
         id: "03864ef025fde8fb587d989186ce6a4a186895ee44a926bfc370e2c366597a3f8f0",
         alias: "TEST",
@@ -45,11 +47,15 @@ struct ListView : View {
                 
             }
         }
+        .task {
+            vm.fetchNodes()
+        }
         
         
         
         
     }
+       
     
 }
 

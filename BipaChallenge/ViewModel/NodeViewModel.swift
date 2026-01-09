@@ -12,14 +12,8 @@ import Combine
 final class NodeViewModel : ObservableObject {
     
     @Published var nodes : [Node] = []
-    @Published var isLoading : Bool
-    @Published var errorMsg : String
-    
-    init(nodes: [Node], isLoading: Bool, errorMsg: String) {
-        self.nodes = nodes
-        self.isLoading = isLoading
-        self.errorMsg = errorMsg
-    }
+    @Published var isLoading : Bool = false
+    @Published var errorMsg : String? = nil
     
   
     func fetchNodes() {
