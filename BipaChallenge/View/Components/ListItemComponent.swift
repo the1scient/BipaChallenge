@@ -19,6 +19,10 @@ struct ListItemComponent : View {
                 
                 Text("Capacidade: \(node.capacity)")
                 
+                Text("\(node.firstSeen)")
+                    .environment(\.locale, Locale(identifier: "pt-BR"))
+                    
+                
             }
         }
        
@@ -33,8 +37,8 @@ struct ListItemComponent : View {
         alias: "ACINQ",
         channels: 1923,
         capacity: 37101048354,
-        firstSeen: 1522941222,
-        updatedAt: 1767917849,
+        firstSeen: NSDate(timeIntervalSince1970: 1522941222) as Date,
+        updatedAt: NSDate(timeIntervalSince1970: 1767917849) as Date,
         city: nil,
         country: nil
     ))

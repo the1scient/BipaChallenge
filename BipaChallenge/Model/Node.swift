@@ -4,6 +4,7 @@
 //
 //  Created by Guilherme Fabbri on 08/01/26.
 //
+import Foundation
 
 struct Node : Identifiable, Decodable {
         
@@ -11,8 +12,8 @@ struct Node : Identifiable, Decodable {
     let alias: String
     let channels: Int
     let capacity: Int
-    let firstSeen: Int
-    let updatedAt: Int
+    let firstSeen: Date
+    let updatedAt: Date
     let city: [String:String]?
     let country: [String:String]?
     
