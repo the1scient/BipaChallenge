@@ -11,7 +11,7 @@ import Combine
 
 final class NodeViewModel : ObservableObject {
     
-    @Published var nodes : [Node]
+    @Published var nodes : [Node] = []
     @Published var isLoading : Bool
     @Published var errorMsg : String
     
@@ -22,6 +22,41 @@ final class NodeViewModel : ObservableObject {
     }
     
   
+    func fetchNodes() {
+        
+        guard let url = URL(string: "https://mempool.space/api/v1/lightning/nodes/rankings/connectivity") else { return }
+        var request = URLRequest(url: url)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                
+            if let error = error {
+                print("Erro: ", error)
+                return
+            }
+            
+            guard let data = data else {
+                print("Sem resultados")
+                return
+            }
+            
+            do {
+                let nodes = try JSONDecoder().decode([Node].self, from: data)
+                DispatchQueue.main.async {
+                    self.nodes = nodes
+                }
+                
+            }
+            
+            catch {
+                print("Erro ao fazer JSON decode: ", error)
+            }
+            
+            
+        }
+        
+        
+        
+    }
     
     
     

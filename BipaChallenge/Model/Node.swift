@@ -5,7 +5,7 @@
 //  Created by Guilherme Fabbri on 08/01/26.
 //
 
-struct Node : Identifiable {
+struct Node : Identifiable, Decodable {
         
     let id: String
     let alias: String
