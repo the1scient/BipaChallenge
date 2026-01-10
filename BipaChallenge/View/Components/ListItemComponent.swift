@@ -18,11 +18,13 @@ struct ListItemComponent : View {
                     Text(node.alias)
                         .font(.title)
                     
-                    Text("📍 \(node.cityName) , \(node.countryName)")
+                    Text("📍 \(node.cityName), \(node.countryName)")
                         .font(.caption)
                 
+                Text("PublicKey: \(node.publicKey)")
+                    .lineLimit(1)
                 
-                Text("Capacidade: \(node.capacity)")
+//                Text("Capacidade: \(node.capacity)")
                 // TODO: Once clicked, show capacity without conversion
                 Text("Capacidade: \(node.capacity / 100000000) BTC")
                 
