@@ -21,4 +21,12 @@ struct Node : Identifiable, Decodable {
         publicKey
     }
     
+    var cityName : String {
+        city?["pt-BR"] ?? city?["en"] ?? "Desconhecida" // Just learned that you can have unlimited "fallbacks". So, if city["pt-BR"] does NOT exists, it defaults to city["en"], and if city["en"] doesn't exist aswell, it defaults to "Desconhecido".
+    }
+    
+    var countryName : String {
+        country?["pt-BR"] ?? country?["en"] ?? "Desconhecido"
+    }
+    
 }

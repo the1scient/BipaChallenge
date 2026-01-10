@@ -15,11 +15,24 @@ struct ListItemComponent : View {
         NavigationLink(destination: ListDetailsView(node: node)) {
             VStack(alignment: .leading) {
                 
-                Text(node.alias)
-                    .font(.title)
+                HStack {
+                    
+                    Text(node.alias)
+                        .font(.title)
+                    
+                    Text("\(node.cityName) , \(node.countryName)")
+                        .font(.caption)
+                    
+            
+                    
+                   
+                    
+                }
+              
+                
                 
                 Text("Capacidade: \(node.capacity)")
-                
+                // TODO: Once clicked, show capacity without conversion
                 Text("Capacidade: \(node.capacity / 100000000) BTC")
                 
                 Text("Canais: \(node.channels)")
