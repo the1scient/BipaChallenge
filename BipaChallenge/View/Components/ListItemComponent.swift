@@ -15,20 +15,11 @@ struct ListItemComponent : View {
         NavigationLink(destination: ListDetailsView(node: node)) {
             VStack(alignment: .leading) {
                 
-                HStack {
-                    
                     Text(node.alias)
                         .font(.title)
                     
-                    Text("\(node.cityName) , \(node.countryName)")
+                    Text("📍 \(node.cityName) , \(node.countryName)")
                         .font(.caption)
-                    
-            
-                    
-                   
-                    
-                }
-              
                 
                 
                 Text("Capacidade: \(node.capacity)")
