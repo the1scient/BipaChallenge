@@ -22,16 +22,6 @@
 		699A9B4B2F1080750019E994 /* BipaChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BipaChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		6915A8D62F13E6A0007F9557 /* Exceptions for "BipaChallenge" folder in "BipaChallenge" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				View/Untitled.swift,
-			);
-			target = 699A9B4A2F1080750019E994 /* BipaChallenge */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		6915A8E02F1422C1007F9557 /* BipaChallengeUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -40,9 +30,6 @@
 		};
 		699A9B4D2F1080750019E994 /* BipaChallenge */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				6915A8D62F13E6A0007F9557 /* Exceptions for "BipaChallenge" folder in "BipaChallenge" target */,
-			);
 			path = BipaChallenge;
 			sourceTree = "<group>";
 		};
