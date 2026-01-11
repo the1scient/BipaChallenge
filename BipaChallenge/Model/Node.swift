@@ -16,6 +16,7 @@ struct Node : Identifiable, Decodable {
     let updatedAt: Date
     let city: [String:String]?
     let country: [String:String]?
+    let iso_code: String?
     
     var id : String {
         publicKey
@@ -29,4 +30,22 @@ struct Node : Identifiable, Decodable {
         country?["pt-BR"] ?? country?["en"] ?? "Desconhecido"
     }
     
+    var countryFlag: String {
+        guard let code = iso_code?.uppercased(),
+              code.count == 2 else {
+            return "🌎"
+        }
+
+        let base: UInt32 = 127397
+        var flag = ""
+
+        for scalar in code.unicodeScalars {
+            if let unicode = UnicodeScalar(base + scalar.value) {
+                flag.unicodeScalars.append(unicode)
+            }
+        }
+
+        return flag
+    }
+
 }

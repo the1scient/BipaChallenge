@@ -37,9 +37,11 @@ struct ListItemComponent : View {
                 
                 Text("Atualizado em: \(node.updatedAt, format: .dateTime.day().month().year())")
                     .environment(\.locale, Locale(identifier: "pt-BR"))
+                    .font(.caption)
                 
                 Text("Público em: \(node.firstSeen, format: .dateTime.day().month().year())")
                     .environment(\.locale, Locale(identifier: "pt-BR"))
+                    .font(.caption)
                     
                 
                 
@@ -60,6 +62,7 @@ struct ListItemComponent : View {
         firstSeen: NSDate(timeIntervalSince1970: 1522941222) as Date,
         updatedAt: NSDate(timeIntervalSince1970: 1767917849) as Date,
         city: nil,
-        country: nil
+        country: nil,
+        iso_code: "US"
     ))
 }

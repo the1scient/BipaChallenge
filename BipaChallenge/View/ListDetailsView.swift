@@ -6,13 +6,46 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ListDetailsView : View {
     let node : Node
 
     var body : some View {
-        VStack {
-            Text("\(node.alias)")
+        VStack(alignment: .leading) {
+            
+            Text("\(node.countryFlag)")
+                .font(.title)
+           
+            
+            Text(node.alias)
+                .font(.title)
+            
+            Text("📍 \(node.cityName), \(node.countryName)")
+                .font(.caption)
+        
+        Text("PublicKey: \(node.publicKey)")
+           
+        Text("Capacidade: \(node.capacity / 100000000) BTC")
+        
+        Text("Canais: \(node.channels)")
+        
+        
+        Text("Atualizado em: \(node.updatedAt, format: .dateTime.day().month().year())")
+            .environment(\.locale, Locale(identifier: "pt-BR"))
+            .font(.caption)
+        
+        Text("Público em: \(node.firstSeen, format: .dateTime.day().month().year())")
+            .environment(\.locale, Locale(identifier: "pt-BR"))
+            .font(.caption)
+            
+            Spacer()
+                .frame(height: 100)
+            
+            NavigationLink(destination: MapView()) {
+                Text("Ver no mapa")
+            }
+            
         }
        
     }
@@ -28,6 +61,7 @@ struct ListDetailsView : View {
         firstSeen: NSDate(timeIntervalSince1970: 1522941222) as Date,
         updatedAt: NSDate(timeIntervalSince1970: 1767917849) as Date,
         city: nil,
-        country: nil
+        country: nil,
+        iso_code: "US"
     ))
 }

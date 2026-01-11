@@ -1,37 +1,37 @@
+////
+////  TabView.swift
+////  BipaChallenge
+////
+////  Created by Guilherme Fabbri on 08/01/26.
+////
 //
-//  TabView.swift
-//  BipaChallenge
+//import SwiftUI
 //
-//  Created by Guilherme Fabbri on 08/01/26.
+//struct MainTabView : View {
+//    var body : some View {
+//        
+//        TabView {
 //
-
-import SwiftUI
-
-struct MainTabView : View {
-    var body : some View {
-        
-        TabView {
-
-              NavigationStack {
-                  ListView()
-              }
-  
-              .tabItem {
-                  Label("Nodes", systemImage: "bitcoinsign")
-              }
-  
-              NavigationStack {
-                  MapView()
-              }
-              .tabItem {
-                  Label("Mapa", systemImage: "map")
-              }
-
-      }
-        
-    }
-}
-
-#Preview() {
-    MainTabView()
-}
+//              NavigationStack {
+//                  ListView()
+//              }
+//  
+//              .tabItem {
+//                  Label("Nodes", systemImage: "bitcoinsign")
+//              }
+//  
+//              NavigationStack {
+//                  MapView()
+//              }
+//              .tabItem {
+//                  Label("Mapa", systemImage: "map")
+//              }
+//
+//      }
+//        
+//    }
+//}
+//
+//#Preview() {
+//    MainTabView()
+//}
