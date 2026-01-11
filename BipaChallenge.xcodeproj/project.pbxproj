@@ -6,7 +6,18 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		6915A8E52F1422C1007F9557 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 699A9B432F1080750019E994 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 699A9B4A2F1080750019E994;
+			remoteInfo = BipaChallenge;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		6915A8DF2F1422C1007F9557 /* BipaChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BipaChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		699A9B4B2F1080750019E994 /* BipaChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BipaChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -21,6 +32,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		6915A8E02F1422C1007F9557 /* BipaChallengeUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BipaChallengeUITests;
+			sourceTree = "<group>";
+		};
 		699A9B4D2F1080750019E994 /* BipaChallenge */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -32,6 +48,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6915A8DC2F1422C1007F9557 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		699A9B482F1080750019E994 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -46,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				699A9B4D2F1080750019E994 /* BipaChallenge */,
+				6915A8E02F1422C1007F9557 /* BipaChallengeUITests */,
 				699A9B4C2F1080750019E994 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				699A9B4B2F1080750019E994 /* BipaChallenge.app */,
+				6915A8DF2F1422C1007F9557 /* BipaChallengeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,6 +86,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6915A8DE2F1422C1007F9557 /* BipaChallengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6915A8E72F1422C1007F9557 /* Build configuration list for PBXNativeTarget "BipaChallengeUITests" */;
+			buildPhases = (
+				6915A8DB2F1422C1007F9557 /* Sources */,
+				6915A8DC2F1422C1007F9557 /* Frameworks */,
+				6915A8DD2F1422C1007F9557 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6915A8E62F1422C1007F9557 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6915A8E02F1422C1007F9557 /* BipaChallengeUITests */,
+			);
+			name = BipaChallengeUITests;
+			packageProductDependencies = (
+			);
+			productName = BipaChallengeUITests;
+			productReference = 6915A8DF2F1422C1007F9557 /* BipaChallengeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		699A9B4A2F1080750019E994 /* BipaChallenge */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 699A9B562F1080760019E994 /* Build configuration list for PBXNativeTarget "BipaChallenge" */;
@@ -93,6 +141,10 @@
 				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
+					6915A8DE2F1422C1007F9557 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 699A9B4A2F1080750019E994;
+					};
 					699A9B4A2F1080750019E994 = {
 						CreatedOnToolsVersion = 26.2;
 					};
@@ -113,11 +165,19 @@
 			projectRoot = "";
 			targets = (
 				699A9B4A2F1080750019E994 /* BipaChallenge */,
+				6915A8DE2F1422C1007F9557 /* BipaChallengeUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6915A8DD2F1422C1007F9557 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		699A9B492F1080750019E994 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -128,6 +188,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6915A8DB2F1422C1007F9557 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		699A9B472F1080750019E994 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -137,7 +204,55 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6915A8E62F1422C1007F9557 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 699A9B4A2F1080750019E994 /* BipaChallenge */;
+			targetProxy = 6915A8E52F1422C1007F9557 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		6915A8E82F1422C1007F9557 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZUG6CNLA9K;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fabbri.BipaChallengeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BipaChallenge;
+			};
+			name = Debug;
+		};
+		6915A8E92F1422C1007F9557 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZUG6CNLA9K;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fabbri.BipaChallengeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BipaChallenge;
+			};
+			name = Release;
+		};
 		699A9B542F1080760019E994 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -326,6 +441,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6915A8E72F1422C1007F9557 /* Build configuration list for PBXNativeTarget "BipaChallengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6915A8E82F1422C1007F9557 /* Debug */,
+				6915A8E92F1422C1007F9557 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		699A9B462F1080750019E994 /* Build configuration list for PBXProject "BipaChallenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

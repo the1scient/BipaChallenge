@@ -32,7 +32,7 @@ struct ListDetailsView : View {
             HStack(spacing: 20) {
                 Text("Capacidade: \n \(node.capacity / 100000000) BTC")
                     .frame(maxWidth: .infinity, maxHeight: 60)
-                    .background(.gray)
+                    .background(.green)
                     .foregroundStyle(.white)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .padding()
@@ -41,7 +41,7 @@ struct ListDetailsView : View {
                 
                 Text("Canais: \n \(node.channels)")
                     .frame(maxWidth: .infinity, maxHeight: 60)
-                    .background(.gray)
+                    .background(.green)
                     .foregroundStyle(.white)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .padding()
@@ -80,7 +80,6 @@ struct ListDetailsView : View {
         Text("\(node.firstSeen, format: .dateTime.day().month().year())")
             .environment(\.locale, Locale(identifier: "pt-BR"))
             .font(.footnote)
-            .textSelection(.enabled)
             
             Spacer()
                 .frame(height: 100)
@@ -89,7 +88,7 @@ struct ListDetailsView : View {
                 Text("Ver no mapa")
                     .frame(maxWidth: .infinity)
                        .padding()
-                       .background(.blue)
+                       .background(.green)
                        .foregroundStyle(.white)
                        .clipShape(RoundedRectangle(cornerRadius: 10))
                 
