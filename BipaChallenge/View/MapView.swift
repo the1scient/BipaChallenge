@@ -12,13 +12,19 @@ struct MapView : View {
     
     let home = CLLocationCoordinate2D(latitude: -23.602074, longitude: -46.645464)
     
+    @State var publicKey : String
     @State var nodeposition : MapCameraPosition = .automatic
+    @StateObject var vm = ChannelViewModel()
+    
     
     var body : some View {
         
         Map(position: $nodeposition) {
-            Marker("Casa", coordinate: home)
-                .tint(.green)
+//            Marker("Casa", coordinate: home)
+//                .tint(.green)
+        }
+        .task {
+            vm.fetchChannelGeodata(publicKey: publicKey)
         }
         
         
@@ -26,5 +32,5 @@ struct MapView : View {
 }
 
 #Preview() {
-    MapView()
+    MapView(publicKey: "03864ef025fde8fb587d989186ce6a4a186895ee44a926bfc370e2c366597a3f8f")
 }

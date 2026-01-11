@@ -42,7 +42,7 @@ struct ListDetailsView : View {
             Spacer()
                 .frame(height: 100)
             
-            NavigationLink(destination: MapView()) {
+            NavigationLink(destination: MapView(publicKey: node.publicKey)) {
                 Text("Ver no mapa")
             }
             

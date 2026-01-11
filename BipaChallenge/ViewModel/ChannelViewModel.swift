@@ -1,28 +1,27 @@
 //
-//  NodeViewModel.swift
+//  ChannelViewModel.swift
 //  BipaChallenge
 //
-//  Created by Guilherme Fabbri on 09/01/26.
+//  Created by Guilherme Fabbri on 11/01/26.
 //
 
 import Foundation
 import Combine
 
 
-final class NodeViewModel : ObservableObject {
+final class ChannelViewModel : ObservableObject {
     
-    @Published var nodes : [Node] = []
+    @Published var channelLocation : [ChannelLocation] = []
     @Published var isLoading : Bool = false
     @Published var errorMsg : String? = nil
     
-  
-    func fetchNodes() {
+    func fetchChannelGeodata(publicKey : String) {
         isLoading = true
         
-        guard let url = URL(string: "https://mempool.space/api/v1/lightning/nodes/rankings/connectivity") else { return }
+        guard let url = URL(string: "https://mempool.space/api/v1/lightning/channels-geo/\(publicKey)") else { return }
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        print("API chamada")
+        print("API Geodata chamada")
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 
             if let error = error {
@@ -40,13 +39,23 @@ final class NodeViewModel : ObservableObject {
             }
             
             do {
-                let nodes = try JSONDecoder().decode([Node].self, from: data)
-                DispatchQueue.main.async {
-                    self.isLoading = false
-                    self.nodes = nodes
+                let json = try JSONSerialization.jsonObject(with: data) as! [[Any]]
+                
+                var locations: [ChannelLocation] = []
+                for array in json {
+                    let name = array[5] as! String
+                    let longitude = array[2] as! Double
+                    let latitude = array[3] as! Double
+                    
+                    let location = ChannelLocation(name: name, latitude: latitude, longitude: longitude)
+                    locations.append(location)
                 }
                 
-                
+                DispatchQueue.main.async {
+                    self.channelLocation = locations
+                    print(self.channelLocation)
+                    self.isLoading = false
+                }
             }
             
             catch {
@@ -55,12 +64,9 @@ final class NodeViewModel : ObservableObject {
             }
             
             
-            
         }
         
         task.resume()
-        
     }
-    
     
 }
