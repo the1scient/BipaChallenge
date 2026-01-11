@@ -9,9 +9,19 @@ import SwiftUI
 import MapKit
 
 struct MapView : View {
+    
+    let home = CLLocationCoordinate2D(latitude: -23.602074, longitude: -46.645464)
+    
+    @State var nodeposition : MapCameraPosition = .automatic
+    
     var body : some View {
         
-        Text("Map View")
+        Map(position: $nodeposition) {
+            Marker("Casa", coordinate: home)
+                .tint(.green)
+        }
+        
+        
     }
 }
 
