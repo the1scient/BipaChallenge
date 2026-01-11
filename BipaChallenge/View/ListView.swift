@@ -11,38 +11,44 @@ struct ListView : View {
     @StateObject var vm = NodeViewModel()
 
     var body : some View {
-        
-        ZStack {
-            // TODO: List sorting picker
-            
-            
-            if vm.isLoading {
-                ProgressView("Buscando dados da API...")
-            }
-            else if let error = vm.errorMsg {
-                Text("Erro ao buscar dados da API: \(error)")
-            }
-            else {
-                List {
-                    ForEach(vm.nodes) { node in
-                        
-                        ListItemComponent(node: node)
-                        
-                        
-                        
-                        
+        NavigationStack {
+            ZStack {
+                // TODO: List sorting picker
+                
+                
+                if vm.isLoading {
+                    ProgressView("Buscando dados da API...")
+                }
+                else if let error = vm.errorMsg {
+                    Text("Erro ao buscar dados da API: \(error)")
+                }
+                else {
+                    List {
+                        ForEach(vm.nodes) { node in
+                            
+                            ListItemComponent(node: node)
+                            
+                        }
                     }
+                    
                 }
                 
+                
+                
             }
-            
-            
-            
+            .navigationTitle("Bipa Challenge")
+            .navigationBarTitleDisplayMode(.large)
         }
+        
+        
         .task {
             vm.fetchNodes()
         }
+        
+        
+        
     }
+    
        
     
 }

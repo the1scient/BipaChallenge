@@ -11,10 +11,7 @@ import SwiftUI
 struct BipaChallengeApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
                 ListView()
-            }
-           
         }
     }
 }

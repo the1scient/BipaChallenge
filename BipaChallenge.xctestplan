@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "0CE0860C-CA3D-4213-8023-7FE8D72B1741",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:BipaChallenge.xcodeproj",
+      "identifier" : "699A9B4A2F1080750019E994",
+      "name" : "BipaChallenge"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:BipaChallenge.xcodeproj",
+        "identifier" : "6915A8DE2F1422C1007F9557",
+        "name" : "BipaChallengeUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
