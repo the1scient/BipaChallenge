@@ -29,9 +29,10 @@ final class BipaChallengeUITests: XCTestCase {
     
     @MainActor
     func testListExistence() throws {
-        //  let nodeList = app.tables.firstMatch
+        let nodesList = app.collectionViews["nodesList"]
         
-        // Couldn't check the existence of the list using XCTAssertTrue + waitForExistence on the list 😕
+        XCTAssertTrue(nodesList.waitForExistence(timeout: 3))
+        
     }
     
     @MainActor
@@ -42,6 +43,24 @@ final class BipaChallengeUITests: XCTestCase {
         XCTAssertLessThan(nodeList.cells.count, 101)
         
     }
+    
+    @MainActor
+    func testNavigationToDetailsView() throws {
+        
+        let nodesList = app.collectionViews["nodesList"]
+        
+        XCTAssertTrue(nodesList.waitForExistence(timeout: 3))
+        
+        let firstNodeItem = nodesList.cells.firstMatch
+        XCTAssertTrue(firstNodeItem.waitForExistence(timeout: 3))
+        
+        firstNodeItem.tap()
+        
+        let detailButton = app.buttons["Ver no mapa"]
+        XCTAssertTrue(detailButton.waitForExistence(timeout: 5))
+        
+    }
+    
     
     
 }
