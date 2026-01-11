@@ -14,39 +14,90 @@ struct ListDetailsView : View {
     var body : some View {
         VStack(alignment: .leading) {
             
-            Text("\(node.countryFlag)")
-                .font(.title)
-           
+            HStack(spacing: 10) {
+                Text("\(node.countryFlag)")
+                    .font(.largeTitle)
+               
+                
+                Text(node.alias)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+            }
             
-            Text(node.alias)
-                .font(.title)
             
             Text("📍 \(node.cityName), \(node.countryName)")
                 .font(.caption)
         
-        Text("PublicKey: \(node.publicKey)")
-           
-        Text("Capacidade: \(node.capacity / 100000000) BTC")
         
-        Text("Canais: \(node.channels)")
+            HStack(spacing: 20) {
+                Text("Capacidade: \n \(node.capacity / 100000000) BTC")
+                    .frame(maxWidth: .infinity, maxHeight: 60)
+                    .background(.gray)
+                    .foregroundStyle(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .padding()
+                    
+                
+                
+                Text("Canais: \n \(node.channels)")
+                    .frame(maxWidth: .infinity, maxHeight: 60)
+                    .background(.gray)
+                    .foregroundStyle(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .padding()
+                    
+                    
+
+            }
         
-        
-        Text("Atualizado em: \(node.updatedAt, format: .dateTime.day().month().year())")
+            
+        Spacer()
+                .frame(height: 20)
+            
+        Text("PublicKey:")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+            
+        Text("\(node.publicKey)")
+                .textSelection(.enabled)
+                .font(.footnote)
+            
+            Spacer()
+                    .frame(height: 20)
+            
+        Text("Atualizado em: ")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+            
+        Text("\(node.updatedAt, format: .dateTime.day().month().year())")
             .environment(\.locale, Locale(identifier: "pt-BR"))
-            .font(.caption)
+            .font(.footnote)
         
-        Text("Público em: \(node.firstSeen, format: .dateTime.day().month().year())")
+        Text("Público em: ")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+            
+        Text("\(node.firstSeen, format: .dateTime.day().month().year())")
             .environment(\.locale, Locale(identifier: "pt-BR"))
-            .font(.caption)
+            .font(.footnote)
+            .textSelection(.enabled)
             
             Spacer()
                 .frame(height: 100)
             
             NavigationLink(destination: MapView(publicKey: node.publicKey)) {
                 Text("Ver no mapa")
+                    .frame(maxWidth: .infinity)
+                       .padding()
+                       .background(.blue)
+                       .foregroundStyle(.white)
+                       .clipShape(RoundedRectangle(cornerRadius: 10))
+                
+                
             }
             
         }
+        .padding()
        
     }
     
