@@ -33,7 +33,7 @@ struct ListDetailsView : View {
             HStack(spacing: 20) {
                 Text("Capacidade: \n \(node.capacity / 100000000) BTC")
                     .frame(maxWidth: .infinity, maxHeight: 60)
-                    .background(.green)
+                    .background(.gray)
                     .foregroundStyle(.white)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .padding()
@@ -42,7 +42,7 @@ struct ListDetailsView : View {
                 
                 Text("Canais: \n \(node.channels)")
                     .frame(maxWidth: .infinity, maxHeight: 60)
-                    .background(.green)
+                    .background(.gray)
                     .foregroundStyle(.white)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .padding()
