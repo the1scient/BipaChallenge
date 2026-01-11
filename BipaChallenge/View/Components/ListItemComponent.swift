@@ -17,6 +17,7 @@ struct ListItemComponent : View {
                 
                     Text(node.alias)
                         .font(.title)
+                        .accessibilityIdentifier("alias_\(node.alias)")
                     
                     Text("📍 \(node.cityName), \(node.countryName)")
                         .font(.caption)

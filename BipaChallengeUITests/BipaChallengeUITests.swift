@@ -61,6 +61,33 @@ final class BipaChallengeUITests: XCTestCase {
         
     }
     
+    func testTextsExistence() throws {
+        
+        let nodesList = app.collectionViews["nodesList"]
+        
+        XCTAssertTrue(nodesList.waitForExistence(timeout: 3))
+
+        let firstCell = nodesList.cells.firstMatch
+        XCTAssertTrue(firstCell.waitForExistence(timeout: 3))
+        
+        let listAlias = firstCell.staticTexts.element(boundBy: 0).label
+        print(listAlias)
+        
+        firstCell.tap()
+        
+        let detailAlias = app.staticTexts.containing(NSPredicate(format: "label CONTAINS %@", listAlias)).firstMatch
+        // First time using NSPredicate and this type of formatting.
+        // What this does is essentially:
+        // 1 - Get all the static texts in the app containing some stuff
+        // 2 - NSPredicate is a filter by condition function
+        // 3 - "label" is how we specify the text inside the app
+        // 4 - CONTAINS %@ is a placeholder, replaced by what we pass after the comma (in this case is listAlias)
+        // This test passed, and it's a cool way to test =)
+        
+        XCTAssertTrue(detailAlias.waitForExistence(timeout: 5))
+        
+    }
+    
     
     
 }

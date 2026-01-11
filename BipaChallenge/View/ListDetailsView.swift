@@ -22,6 +22,7 @@ struct ListDetailsView : View {
                 Text(node.alias)
                     .font(.largeTitle)
                     .fontWeight(.bold)
+                    .accessibilityIdentifier("detailAlias_\(node.alias)")
             }
             
             
