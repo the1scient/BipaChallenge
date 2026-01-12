@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6957A24E2F143D780048E593 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 6957A24D2F143D740048E593 /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		6915A8E52F1422C1007F9557 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		6915A8DF2F1422C1007F9557 /* BipaChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BipaChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6957A2392F1426CE0048E593 /* BipaChallenge.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = BipaChallenge.xctestplan; sourceTree = "<group>"; };
 		6957A2422F1437060048E593 /* BipaChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BipaChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6957A24D2F143D740048E593 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = README.md; sourceTree = "<group>"; };
 		699A9B4B2F1080750019E994 /* BipaChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BipaChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				6957A2392F1426CE0048E593 /* BipaChallenge.xctestplan */,
+				6957A24D2F143D740048E593 /* README.md */,
 				699A9B4D2F1080750019E994 /* BipaChallenge */,
 				6915A8E02F1422C1007F9557 /* BipaChallengeUITests */,
 				6957A2432F1437060048E593 /* BipaChallengeTests */,
@@ -252,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6957A24E2F143D780048E593 /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
