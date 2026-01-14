@@ -9,7 +9,7 @@ import XCTest
 @testable import BipaChallenge
 
 final class BipaChallengeUITests: XCTestCase {
-
+    
     var app : XCUIApplication!
     
     override func setUpWithError() throws {
@@ -17,11 +17,11 @@ final class BipaChallengeUITests: XCTestCase {
         app = XCUIApplication()
         app.launch()
     }
-
+    
     override func tearDownWithError() throws {
         app = nil // Apparently this cleans the testing environment once the tests finish
     }
-
+    
     @MainActor
     func testNavigationBar() throws {
         XCTAssertTrue(app.navigationBars["Bipa Challenge"].waitForExistence(timeout: 3))
@@ -66,7 +66,7 @@ final class BipaChallengeUITests: XCTestCase {
         let nodesList = app.collectionViews["nodesList"]
         
         XCTAssertTrue(nodesList.waitForExistence(timeout: 3))
-
+        
         let firstCell = nodesList.cells.firstMatch
         XCTAssertTrue(firstCell.waitForExistence(timeout: 3))
         

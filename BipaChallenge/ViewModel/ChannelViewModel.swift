@@ -23,7 +23,7 @@ final class ChannelViewModel : ObservableObject {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         print("API Geodata chamada")
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                
+            
             if let error = error {
                 print("Erro: ", error)
                 self.errorMsg = "\(error)"

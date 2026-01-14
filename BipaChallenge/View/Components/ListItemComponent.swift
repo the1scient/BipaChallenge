@@ -15,25 +15,22 @@ struct ListItemComponent : View {
         NavigationLink(destination: ListDetailsView(node: node)) {
             VStack(alignment: .leading) {
                 
-                    Text(node.alias)
-                        .font(.title)
-                        .accessibilityIdentifier("alias_\(node.alias)")
-                    
-                    Text("📍 \(node.cityName), \(node.countryName)")
-                        .font(.caption)
+                Text(node.alias)
+                    .font(.title)
+                    .accessibilityIdentifier("alias_\(node.alias)")
+                
+                Text("📍 \(node.cityName), \(node.countryName)")
+                    .font(.caption)
                 
                 Text("PublicKey: \(node.publicKey)")
                     .lineLimit(1)
                 
-//                Text("Capacidade: \(node.capacity)")
-                // TODO: Once clicked, show capacity without conversion
                 Text("Capacidade: \(node.capacity / 100000000) BTC")
                 
                 Text("Canais: \(node.channels)")
                 
                 
                 Spacer()
-                   
                 
                 
                 Text("Atualizado em: \(node.updatedAt, format: .dateTime.day().month().year())")
@@ -43,13 +40,9 @@ struct ListItemComponent : View {
                 Text("Público em: \(node.firstSeen, format: .dateTime.day().month().year())")
                     .environment(\.locale, Locale(identifier: "pt-BR"))
                     .font(.caption)
-                    
-                
                 
             }
         }
-       
-       
     }
     
 }

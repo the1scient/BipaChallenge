@@ -7,7 +7,7 @@
 import Foundation
 
 struct Node : Identifiable, Decodable {
-        
+    
     let publicKey: String
     let alias: String
     let channels: Int
@@ -35,17 +35,17 @@ struct Node : Identifiable, Decodable {
               code.count == 2 else {
             return "🌎"
         }
-
+        
         let base: UInt32 = 127397
         var flag = ""
-
+        
         for scalar in code.unicodeScalars {
             if let unicode = UnicodeScalar(base + scalar.value) {
                 flag.unicodeScalars.append(unicode)
             }
         }
-
+        
         return flag
     }
-
+    
 }

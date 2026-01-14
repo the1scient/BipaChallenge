@@ -15,7 +15,6 @@ final class NodeViewModel : ObservableObject {
     @Published var isLoading : Bool = false
     @Published var errorMsg : String? = nil
     
-  
     func fetchNodes() {
         isLoading = true
         
@@ -24,7 +23,7 @@ final class NodeViewModel : ObservableObject {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         print("API chamada")
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                
+            
             if let error = error {
                 print("Erro: ", error)
                 self.errorMsg = "\(error)"
@@ -45,17 +44,12 @@ final class NodeViewModel : ObservableObject {
                     self.isLoading = false
                     self.nodes = nodes
                 }
-                
-                
             }
             
             catch {
                 print("Erro ao fazer JSON decode: ", error)
                 self.isLoading = false
             }
-            
-            
-            
         }
         
         task.resume()

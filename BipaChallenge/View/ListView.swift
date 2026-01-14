@@ -9,13 +9,10 @@ import SwiftUI
 struct ListView : View {
     
     @StateObject var vm = NodeViewModel()
-
+    
     var body : some View {
         NavigationStack {
             ZStack {
-                // TODO: List sorting picker
-                
-                
                 if vm.isLoading {
                     ProgressView("Buscando dados da API...")
                 }
@@ -33,27 +30,17 @@ struct ListView : View {
                     .accessibilityIdentifier("nodesList")
                     
                 }
-                
-                
-                
             }
             .navigationTitle("Bipa Challenge")
             .navigationBarTitleDisplayMode(.large)
         }
         
-        
         .task {
             vm.fetchNodes()
         }
-        
-        
-        
     }
-    
-       
-    
 }
-    
+
 
 #Preview() {
     ListView()

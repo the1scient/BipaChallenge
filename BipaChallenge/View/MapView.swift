@@ -16,26 +16,16 @@ struct MapView : View {
     @State var nodeposition : MapCameraPosition = .automatic
     @StateObject var vm = ChannelViewModel()
     
-    
     var body : some View {
-        
         Map(position: $nodeposition) {
-//            Marker("Casa", coordinate: home)
-//                .tint(.green)
-            
             ForEach(vm.channelLocation) { location in
-            
                 Marker(location.name, coordinate: location.coordinate)
                     .tint(.green)
-                
             }
-            
         }
         .task {
             vm.fetchChannelGeodata(publicKey: publicKey)
         }
-        
-        
     }
 }
 

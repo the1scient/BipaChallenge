@@ -13,15 +13,10 @@ final class ViewModelTests: XCTestCase {
     var nVM : NodeViewModel!
     var cVM : ChannelViewModel!
     
-
+    
     override func setUpWithError() throws {
-            nVM = NodeViewModel()
-            cVM = ChannelViewModel()
-    }
-
-    override func tearDownWithError() throws {
-//            nVM = nil
-//            cVM = nil
+        nVM = NodeViewModel()
+        cVM = ChannelViewModel()
     }
     
     func testEmptyStates() throws {
@@ -42,9 +37,9 @@ final class ViewModelTests: XCTestCase {
         
         cVM.fetchChannelGeodata(publicKey: "03864ef025fde8fb587d989186ce6a4a186895ee44a926bfc370e2c366597a3f8f")
         XCTAssertTrue(cVM.isLoading)
-
+        
     }
-
+    
     func testDataReturned() throws {
         
         let nodesExpectation = expectation(description: "Successfully fetched Nodes")
@@ -58,9 +53,6 @@ final class ViewModelTests: XCTestCase {
             
             XCTAssertNil(self.nVM.errorMsg) // no errors should exist
             nodesExpectation.fulfill()
-        
-            
-            
         }
         
         cVM.fetchChannelGeodata(publicKey: "03864ef025fde8fb587d989186ce6a4a186895ee44a926bfc370e2c366597a3f8f")
@@ -72,12 +64,11 @@ final class ViewModelTests: XCTestCase {
             channelExpectation.fulfill()
         }
         
-        
         waitForExpectations(timeout: 20)
         
         
     }
-
-   
-
+    
+    
+    
 }
