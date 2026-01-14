@@ -28,7 +28,7 @@ enum APIError : Error, LocalizedError {
             return "Erro ao fazer decoding"
         case .noData:
             return "API não retornou dados"
-        case .unreachable
+        case .unreachable:
             return "Houve um problema de conexão!"
         }
         
