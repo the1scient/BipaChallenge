@@ -48,4 +48,12 @@ struct Node : Identifiable, Decodable {
         return flag
     }
     
+    
+    var capacityInBTC: String {
+        let btc = Double(capacity) / 100_000_000.0
+        
+        
+        return String(format: "%.2f", btc)
+    }
+    
 }

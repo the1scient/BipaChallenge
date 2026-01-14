@@ -22,25 +22,21 @@ final class NodeViewModel : ObservableObject {
     func fetchNodes() {
         isLoading = true
         errorMsg = nil
-      
+        
         cancellable = apiClient.nodes()
-                  .receive(on: DispatchQueue.main)
-                  .sink(
-                      receiveCompletion: { [weak self] completion in
-                          self?.isLoading = false
-                          
-                          if case .failure(let error) = completion {
-                              self?.errorMsg = "\(error)"
-                          }
-                      },
-                      receiveValue: { [weak self] nodes in
-                          self?.nodes = nodes
-                      }
-                  )
-            
-            
-        
-        
+            .receive(on: DispatchQueue.main)
+            .sink(
+                receiveCompletion: { [weak self] completion in
+                    self?.isLoading = false
+                    
+                    if case .failure(let error) = completion {
+                        self?.errorMsg = "\(error)"
+                    }
+                },
+                receiveValue: { [weak self] nodes in
+                    self?.nodes = nodes
+                }
+            )
     }
     
     

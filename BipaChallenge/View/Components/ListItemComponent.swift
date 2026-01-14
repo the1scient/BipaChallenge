@@ -25,7 +25,7 @@ struct ListItemComponent : View {
                 Text("PublicKey: \(node.publicKey)")
                     .lineLimit(1)
                 
-                Text("Capacidade: \(node.capacity / 100000000) BTC")
+                Text("Capacidade: \(node.capacityInBTC) BTC")
                 
                 Text("Canais: \(node.channels)")
                 

@@ -28,7 +28,7 @@ struct ListDetailsView : View {
                 .font(.caption)
             
             HStack(spacing: 20) {
-                Text("Capacidade: \n \(node.capacity / 100000000) BTC")
+                Text("Capacidade: \n \(node.capacityInBTC) BTC")
                     .frame(maxWidth: .infinity, maxHeight: 60)
                     .background(.gray)
                     .foregroundStyle(.white)
