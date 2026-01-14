@@ -14,6 +14,7 @@ enum APIError : Error, LocalizedError {
     case responseInvalid
     case failedDecoding
     case noData
+    case unreachable
     
     var errorDescription: String? {
         switch self {
@@ -27,7 +28,10 @@ enum APIError : Error, LocalizedError {
             return "Erro ao fazer decoding"
         case .noData:
             return "API não retornou dados"
+        case .unreachable
+            return "Houve um problema de conexão!"
         }
+        
         
     }
     
