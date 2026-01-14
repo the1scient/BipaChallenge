@@ -76,15 +76,6 @@ struct ListDetailsView : View {
             Spacer()
                 .frame(height: 100)
             
-            NavigationLink(destination: MapView(publicKey: node.publicKey)) {
-                Text("Ver no mapa")
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(.green)
-                    .foregroundStyle(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-            }
-            
         }
         .padding()
         
